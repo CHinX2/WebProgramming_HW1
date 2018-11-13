@@ -1,4 +1,9 @@
-//https://blog.abhijeetr.com/2010/04/very-simple-http-server-writen-in-c.html
+// ===
+// Web Programming HW#1
+// Web server using fork()
+// 405410034 | Chinxy Yang
+// 20181113
+// ===
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -125,4 +130,10 @@ void respond()
 
 	//Closing SOCKET
 	close(connfd);
+}
+
+//error - wrapper for perror
+void error(char *msg) {
+  perror(msg);
+  exit(1);
 }
