@@ -31,9 +31,10 @@ int main(int argc, char* argv[])
 	//Default Values PATH = ~/ and PORT=10000
 	char PORT[6];
 	ROOT = getenv("PWD");
-	strcpy(PORT,"10000");
+	strcpy(PORT,"10001");
 
 	int slot=0;
+	int a;
 	
 	// Setting connfd to -1: there is no client connected
 	connfd = -1;
@@ -61,6 +62,7 @@ int main(int argc, char* argv[])
 	// ACCEPT connections
 	for ( ; ; )
 	{
+		wait(&a);
 		clilen = sizeof(cliaddr);
 		if((connfd = accept (listenfd, (struct sockaddr *) &cliaddr, &clilen)) < 0)
 		{
