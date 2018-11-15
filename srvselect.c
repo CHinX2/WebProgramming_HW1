@@ -34,7 +34,11 @@ int main(int argc, char **argv)
     struct sockaddr_in cliaddr, servaddr;
 
     //Default Values PATH = ~/ and PORT=10000
-    int PORT = 10000;
+    int PORT = 10001;
+    if(argc>1)
+    {
+        PORT = atoi(argv[1]);
+    }
     ROOT = getenv("PWD");
 
     listenfd = socket(AF_INET, SOCK_STREAM, 0);

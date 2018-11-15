@@ -31,7 +31,11 @@ int main(int argc, char* argv[])
 	//Default Values PATH = ~/ and PORT=10000
 	char PORT[6];
 	ROOT = getenv("PWD");
-	strcpy(PORT,"10001");
+	if(argc > 1)
+	{
+		strcpy(PORT,argv[1]);
+	}
+	else strcpy(PORT,"10000");
 
 	int slot=0;
 	int a;
